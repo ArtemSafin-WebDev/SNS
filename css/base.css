@@ -1,0 +1,281 @@
+/**
+Hover styling for all devices and browsers
+ */
+a {
+  color: #06a478;
+}
+
+* {
+  outline: none !important;
+}
+
+.btn-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 60px;
+}
+
+.aeroport-family {
+  font-family: Aeroport;
+}
+
+.title-family {
+  font-family: SNS;
+}
+
+.text-thin {
+  font-weight: 300;
+}
+
+.text-normal {
+  font-weight: 500;
+}
+
+.text-semi-bold {
+  font-weight: 600;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-grey {
+  color: #565259;
+}
+
+.text-dark {
+  color: #0c0807;
+}
+
+.d-none,
+._d-none {
+  display: none;
+}
+
+.text-sm {
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 1.43;
+  letter-spacing: -0.4px;
+}
+
+.text-lead {
+  font-size: 53px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.text-lg {
+  font-size: 24px;
+}
+
+.mw-475 {
+  max-width: 475px;
+}
+
+@media (max-width: 767px) {
+  .mobile-mt-0 {
+    margin-top: 0 !important;
+  }
+}
+
+.video-responsive {
+  padding-bottom: 56.6%;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+html * {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: Aeroport;
+  color: #565259;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.container-fluid {
+  padding: 0 40px;
+}
+
+@media (max-width: 1200px) {
+  .container-fluid {
+    padding: 0 17px;
+  }
+}
+
+.container-inner {
+  max-width: 1240px;
+  padding: 0 20px;
+}
+
+img {
+  width: 100%;
+}
+
+svg {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .site-backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 0.15s ease-in;
+    transition: opacity 0.15s ease-in;
+    cursor: pointer;
+  }
+  .site-backdrop.active {
+    opacity: 0.97;
+    visibility: visible;
+    -webkit-transition: opacity 0.15s ease-in;
+    transition: opacity 0.15s ease-in;
+    background: #565259;
+    z-index: 14;
+  }
+}
+
+@font-face {
+  font-family: Aeroport;
+  font-display: swap;
+  src: url("../fonts/Aeroport.woff2") format("woff2"), url("../fonts/Aeroport.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Aeroport;
+  font-display: swap;
+  src: url("../fonts/Aeroport-Light.woff2") format("woff2"), url("../fonts/Aeroport-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Aeroport;
+  font-display: swap;
+  src: url("../fonts/Aeroport-Medium.woff2") format("woff2"), url("../fonts/Aeroport-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Aeroport;
+  font-display: swap;
+  src: url("../fonts/Aeroport-Bold.woff2") format("woff2"), url("../fonts/Aeroport-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SNS;
+  font-display: swap;
+  src: url("../fonts/SNS.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Icon-font */
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icon-font/icomoon.ttf?z1yxk0") format("truetype"), url("../fonts/icon-font/icomoon.woff?z1yxk0") format("woff"), url("../fonts/icon-font/icomoon.svg?z1yxk0#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "\e90a";
+}
+
+.icon-chevron-down:before {
+  content: "\e909";
+}
+
+.icon-arrow-rotate-slim:before {
+  content: "\e908";
+}
+
+.icon-play:before {
+  content: "\e905";
+}
+
+.icon-search:before {
+  content: "\e906";
+}
+
+.icon-arrow-l:before {
+  content: "\e900";
+}
+
+.icon-arrow-r:before {
+  content: "\e901";
+}
+
+.icon-arrow-rotate:before {
+  content: "\e902";
+}
+
+.icon-facebook:before {
+  content: "\e903";
+}
+
+.icon-instagram:before {
+  content: "\e904";
+}
+
+.icon-vk:before {
+  content: "\e907";
+}
+/*# sourceMappingURL=base.css.map */

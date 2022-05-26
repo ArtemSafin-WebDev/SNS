@@ -40,9 +40,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -58,7 +55,28 @@
   letter-spacing: -0.02em;
   color: #565259;
   font-family: var(--sns);
-  margin: 50px 0;
+  margin: auto 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .become-partner__greeting-text {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .become-partner__greeting-text {
+    font-size: 25px;
+    line-height: 1.2;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .become-partner__greeting-text {
+    padding: 0 20px;
+    font-size: 22px;
+  }
 }
 
 .become-partner__greeting-text b {
@@ -79,6 +97,15 @@
           align-items: center;
   gap: 20px;
   margin-bottom: 35px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (max-width: 576px) {
+  .become-partner__form-steps {
+    gap: 10px;
+    margin-bottom: 25px;
+  }
 }
 
 .become-partner__form-step {
@@ -98,6 +125,14 @@
   letter-spacing: -0.02em;
   font-family: var(--sns);
   text-decoration: none;
+}
+
+@media screen and (max-width: 576px) {
+  .become-partner__form-step {
+    gap: 10px;
+    font-size: 22px;
+    line-height: 1.2;
+  }
 }
 
 .become-partner__form-step:link, .become-partner__form-step:visited {
@@ -151,6 +186,12 @@
   display: block;
 }
 
+@media screen and (max-width: 576px) {
+  .become-partner__form-step-divider::before, .become-partner__form-step-divider::after {
+    width: 50px;
+  }
+}
+
 .become-partner__form-step-divider::after {
   position: absolute;
   left: 0;
@@ -178,20 +219,27 @@
   color: #565259;
   padding: 0;
   margin: 0;
-  margin-bottom: 2px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 576px) {
+  .become-partner__inner-heading {
+    font-size: 22px;
+    line-height: 1.2;
+  }
 }
 
 .become-partner__inner-text {
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
-  line-height: 40px;
+  line-height: 1.3;
   letter-spacing: -0.03em;
   font-family: var(--aeroport);
   color: #565259;
   margin: 0;
   padding: 0;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .become-partner__inner-text p {
@@ -356,7 +404,14 @@
   display: grid;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1024px) {
+  .become-partner__city-search-cards {
+    -ms-grid-columns: (minmax(0, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 576px) {
   .become-partner__city-search-cards {
     -ms-grid-columns: minmax(0, 1fr);
         grid-template-columns: minmax(0, 1fr);
@@ -493,6 +548,12 @@
   grid-column: 1 / -1;
 }
 
+@media screen and (max-width: 576px) {
+  .become-partner__contract-field {
+    grid-column: 1 / -1;
+  }
+}
+
 .become-partner__contract-field-check {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -526,6 +587,14 @@
   text-decoration: none;
 }
 
+@media screen and (max-width: 1024px) {
+  .become-partner__contract-field-check {
+    position: static;
+    margin: 0;
+    margin-top: 15px;
+  }
+}
+
 .become-partner__contract-field-check:link, .become-partner__contract-field-check:visited {
   color: #85898d;
 }
@@ -539,11 +608,11 @@
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
-  line-height: 40px;
+  line-height: 1.2;
   letter-spacing: -0.03em;
   color: #565259;
   font-family: var(--aeroport);
-  margin-bottom: 2px;
+  margin-bottom: 10px;
   padding-left: 15px;
 }
 
@@ -562,6 +631,10 @@
   background: #ffffff;
   border: 1px solid #d9d9d9;
   color: #565259;
+}
+
+.become-partner__text-input ~ .become-partner__text-input {
+  margin-top: 8px;
 }
 
 .become-partner__text-input::-webkit-input-placeholder {
@@ -614,13 +687,13 @@
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
-  line-height: 40px;
+  line-height: 1.2;
   letter-spacing: -0.03em;
   cursor: pointer;
   -webkit-user-select: none;
@@ -651,6 +724,9 @@
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   margin-right: 8px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-top: -1px;
 }
 
 .become-partner__checkbox-mark svg {
@@ -688,6 +764,14 @@
   margin-top: 0;
 }
 
+@media screen and (max-width: 576px) {
+  .become-partner__checkboxes {
+    -ms-grid-columns: minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
+    grid-gap: 15px;
+  }
+}
+
 .become-partner__contract-controls {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -699,6 +783,16 @@
   gap: 20px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+@media screen and (max-width: 576px) {
+  .become-partner__contract-controls {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(0, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 20px;
+  }
 }
 
 .become-partner__contract-controls-btn {
@@ -725,6 +819,12 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 576px) {
+  .become-partner__contract-controls-btn {
+    width: 100%;
+  }
+}
+
 .become-partner__contract-controls-btn:link, .become-partner__contract-controls-btn:visited {
   color: #85898d;
 }
@@ -736,5 +836,128 @@
 
 .become-partner__contract {
   padding-bottom: 160px;
+}
+
+.become-partner__start {
+  padding: 40px 130px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
+  border-top: 1px solid #d6d6d6;
+}
+
+@media screen and (max-width: 1400px) {
+  .become-partner__start {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .become-partner__start {
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .become-partner__start {
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.become-partner__start-text {
+  width: 50%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  color: #000000;
+  font-family: var(--aeroport);
+}
+
+@media screen and (max-width: 576px) {
+  .become-partner__start-text {
+    width: 100%;
+  }
+}
+
+.become-partner__start-link {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  white-space: nowrap;
+  padding: 15px 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  border: 1px solid #06a478;
+  color: #06a478;
+  font-family: var(--aeroport);
+  -webkit-transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.become-partner__start-link:link, .become-partner__start-link:visited {
+  color: #06a478;
+}
+
+.become-partner__start-link:hover {
+  background-color: #06a478;
+  color: white;
+}
+
+.become-partner__add-next {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: -0.03em;
+  grid-column: 1 / -1;
+  color: #06a478;
+  text-decoration: none;
+  margin-top: -20px;
+}
+
+.become-partner__add-next svg {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  fill: #06a478;
+}
+
+.become-partner__add-next:link, .become-partner__add-next:visited {
+  color: #06a478;
 }
 /*# sourceMappingURL=styles.css.map */

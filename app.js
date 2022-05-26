@@ -21,4 +21,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const instance = new Inputmask({ mask: "+7 (999) 999-99-99" });
     instance.mask(input);
   });
+
+  const setWidth = () => {
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+
+    document.documentElement.style.setProperty(
+      "--sb-width",
+      scrollbarWidth + "px"
+    );
+  };
+
+  setWidth();
+
+  window.addEventListener("resize", setWidth);
+
+
+  const setContainerWidth = () => {
+    const container = document.querySelector('.become-partner__inner-container');
+    if (!container) return;
+
+    document.documentElement.style.setProperty(
+      "--partner-container-width",
+      container.offsetWidth + "px"
+    );
+  }
+
+  setContainerWidth();
+
+  window.addEventListener("resize", setContainerWidth);
 });

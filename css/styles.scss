@@ -860,3 +860,44 @@
     // border-top: 1px solid #06a478;
   }
 }
+
+.become-partner__file {
+  display: block;
+  cursor: pointer;
+}
+
+.become-partner__file-input {
+  display: none;
+}
+
+.become-partner__file-content {
+  display: flex;
+  align-items: flex-start;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #85898d;
+  transition: color 0.2s;
+  svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+    flex-shrink: 0;
+    margin-right: 10px;
+    margin-top: 2px;
+  }
+}
+
+.become-partner__file-input.loaded ~ .become-partner__file-content {
+  color: #565259;
+}
+
+.become-partner__format-remark {
+  grid-column: 1 / -1;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #565259;
+}

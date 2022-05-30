@@ -1215,6 +1215,15 @@
   display: none;
 }
 
+@media screen and (max-width: 576px) {
+  .become-partner__missing-error {
+    padding: 15px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .become-partner__missing-error.shown {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1227,6 +1236,12 @@
   -ms-flex-negative: 0;
       flex-shrink: 0;
   margin-right: 30px;
+}
+
+@media screen and (max-width: 576px) {
+  .become-partner__missing-error svg {
+    margin-right: 20px;
+  }
 }
 
 .become-partner__missing-error a {

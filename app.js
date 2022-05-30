@@ -62,13 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       input.addEventListener("change", () => {
         if (input.files.length) {
-          input.classList.add('loaded');
+          input.classList.add("loaded");
           if (label) {
             label.textContent = input.files[0].name;
           }
-        
         } else {
-          input.classList.remove('loaded');
+          input.classList.remove("loaded");
         }
       });
 
@@ -97,4 +96,62 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   fileUploads();
+
+  const allCheckboxes = Array.from(
+    document.querySelectorAll('input[type="radio"], input[type="checkbox"]')
+  );
+
+  const elementToggles = allCheckboxes.filter((element) =>
+    element.hasAttribute("data-show-element")
+  );
+
+  
+
+  allCheckboxes.forEach((box) => {
+    const check = () => {
+      elementToggles.forEach((toggle) => {
+        const element = document.querySelector(
+          toggle.getAttribute("data-show-element")
+        );
+        if (!element) {
+          console.error("No element");
+          return;
+        }
+
+        if (toggle.checked) {
+          console.log("Box checked");
+
+          element.classList.add('shown')
+        } else {
+          console.log("Box not checked");
+
+          element.classList.remove('shown')
+        }
+      });
+    };
+
+    check();
+    box.addEventListener("change", () => {
+      check();
+    });
+
+    // const element = document.querySelector(box.getAttribute('data-show-element'));
+    // if (!element) {
+    //   console.error('No element');
+    //   return;
+    // }
+
+    // const check = () => {
+    //   if (box.checked) {
+    //     console.log('Box checked');
+    //   } else {
+    //     console.log('Box not checked');
+    //   }
+    // }
+    // box.addEventListener('change', () => {
+    //   check();
+    // });
+
+    // check();
+  });
 });

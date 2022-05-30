@@ -135,15 +135,20 @@
                     <div
                       class="become-partner__contract-field become-partner__contract-field--separated become-partner__contract-field--fullwidth"
                     >
-
                       <div class="become-partner__text-input-label">
                         Идентификатор GUID Покупателя*
                       </div>
-                      <div class="become-partner__checkboxes become-partner__checkboxes--compact">
+                      <div
+                        class="become-partner__checkboxes become-partner__checkboxes--compact"
+                      >
                         <label class="become-partner__checkbox">
                           <input
                             type="radio"
-                            class="become-partner__checkbox-input" value="1"
+                            class="become-partner__checkbox-input"
+                            data-show-element="#guid"
+                            value="1"
+                            name="identifier"
+                            checked
                           />
                           <span class="become-partner__checkbox-mark">
                             <svg
@@ -160,7 +165,10 @@
                         <label class="become-partner__checkbox">
                           <input
                             type="radio"
-                            class="become-partner__checkbox-input" value="2"
+                            class="become-partner__checkbox-input"
+                            value="2"
+                            name="identifier"
+                            data-show-element="#guid-error"
                           />
                           <span class="become-partner__checkbox-mark">
                             <svg
@@ -175,22 +183,61 @@
                           Нет
                         </label>
                       </div>
+                      <input
+                        type="text"
+                        class="become-partner__text-input become-partner__text-input--hidden"
+                        placeholder="Введите идентификатор"
+                        value=""
+                        id="guid"
+                      />
+
+                      <div
+                        class="become-partner__missing-error"
+                        id="guid-error"
+                      >
+                        <svg
+                          width="2"
+                          height="50"
+                          viewBox="0 0 2 50"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0 30.1075V0H2V30.1075H0ZM2 47.9247V50H0V47.9247H2Z"
+                            fill="#FF251B"
+                          />
+                        </svg>
+                        <div class="become-partner__missing-error-content">
+                          Для дальнейшего оформления сотрудничества требуется
+                          GUID покупателя!
+                        </div>
+                      </div>
                       <div class="become-partner__contract-field-remark">
-                        *ГУИД или глобальный уникальный идентификатор – код, идентифицирующий организацию или её место осуществления деятельности. GUID присваивается посредством одного из официальных операторов на выбор организации (например, система «Контур. Меркурий» и др.).
+                        *ГУИД или глобальный уникальный идентификатор – код,
+                        идентифицирующий организацию или её место осуществления
+                        деятельности. GUID присваивается посредством одного из
+                        официальных операторов на выбор организации (например,
+                        система «Контур. Меркурий» и др.).
                       </div>
                     </div>
                     <div
                       class="become-partner__contract-field become-partner__contract-field--separated become-partner__contract-field--fullwidth"
                     >
-
                       <div class="become-partner__text-input-label">
                         Я подключен к ЭДО**
                       </div>
-                      <div class="become-partner__checkboxes become-partner__checkboxes--compact">
+                      <div
+                        class="become-partner__checkboxes become-partner__checkboxes--compact"
+                      >
                         <label class="become-partner__checkbox">
                           <input
                             type="radio"
-                            class="become-partner__checkbox-input" value="1"
+                            class="become-partner__checkbox-input"
+                            value="1"
+                            name="edo"
+                            data-show-element="#edo"
                           />
                           <span class="become-partner__checkbox-mark">
                             <svg
@@ -207,7 +254,10 @@
                         <label class="become-partner__checkbox">
                           <input
                             type="radio"
-                            class="become-partner__checkbox-input" value="2"
+                            class="become-partner__checkbox-input"
+                            value="2"
+                            name="edo"
+                            data-show-element="#edo-error"
                           />
                           <span class="become-partner__checkbox-mark">
                             <svg
@@ -222,22 +272,53 @@
                           Нет
                         </label>
                       </div>
+                      <input
+                        type="text"
+                        class="become-partner__text-input become-partner__text-input--hidden"
+                        id="edo"
+                        placeholder="Введите наименование оператора ЭДО"
+                        value=""
+                      />
+                      <div class="become-partner__missing-error" id="edo-error">
+                        <svg
+                          width="2"
+                          height="50"
+                          viewBox="0 0 2 50"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0 30.1075V0H2V30.1075H0ZM2 47.9247V50H0V47.9247H2Z"
+                            fill="#FF251B"
+                          />
+                        </svg>
+                        <div class="become-partner__missing-error-content">
+                          С информацией о подключении к ЭДО Вы можете
+                          ознакомиться на сайте <a href="#">EDO.SNS.RU.</a>
+                        </div>
+                      </div>
                       <div class="become-partner__contract-field-remark">
-                        **Электронный документооборот – система обмена<br> электронной документацией.
+                        **Электронный документооборот – система обмена<br />
+                        электронной документацией.
                       </div>
                     </div>
                     <div
                       class="become-partner__contract-field become-partner__contract-field--separated become-partner__contract-field--fullwidth"
                     >
-
                       <div class="become-partner__text-input-label">
                         Я зарегистрирован в системе «Честный знак»***
                       </div>
-                      <div class="become-partner__checkboxes become-partner__checkboxes--compact">
+                      <div
+                        class="become-partner__checkboxes become-partner__checkboxes--compact"
+                      >
                         <label class="become-partner__checkbox">
                           <input
                             type="radio"
-                            class="become-partner__checkbox-input" value="1"
+                            class="become-partner__checkbox-input"
+                            value="1"
+                            data-show-element="#sign-check" name="sign"
                           />
                           <span class="become-partner__checkbox-mark">
                             <svg
@@ -254,7 +335,8 @@
                         <label class="become-partner__checkbox">
                           <input
                             type="radio"
-                            class="become-partner__checkbox-input" value="2"
+                            class="become-partner__checkbox-input"
+                            value="2" name="sign"
                           />
                           <span class="become-partner__checkbox-mark">
                             <svg
@@ -269,8 +351,41 @@
                           Нет
                         </label>
                       </div>
+                      <div class="become-partner__sign-check" id="sign-check">
+                        <a href="#" class="become-partner__sign-check-link">
+                          Проверить
+                        </a>
+                        <div
+                          class="become-partner__missing-error shown"
+                          
+                        >
+                          <svg
+                            width="2"
+                            height="50"
+                            viewBox="0 0 2 50"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M0 30.1075V0H2V30.1075H0ZM2 47.9247V50H0V47.9247H2Z"
+                              fill="#FF251B"
+                            />
+                          </svg>
+                          <div class="become-partner__missing-error-content">
+                            Ваша организация не найдена среди зарегистрированных
+                            в системе «Честный знак»! Для дальнейшего оформления
+                            сотрудничества требуется регистрация в системе
+                            «Честный знак»! С информацией о подключении к
+                            системе Вы можете ознакомиться на сайте
+                            <a href="#">честныйзнак.рф.</a>
+                          </div>
+                        </div>
+                      </div>
                       <div class="become-partner__contract-field-remark">
-                        ***Честный ЗНАК – национальная система маркировки и<br> прослеживания товаров.
+                        ***Честный ЗНАК – национальная система маркировки и<br />
+                        прослеживания товаров.
                       </div>
                     </div>
 

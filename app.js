@@ -1,26 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const onlyNumericInputsNoFormatting = Array.from(
-    document.querySelectorAll(".js-numeric-input")
-  );
+  const initializeMasks = () => {
+    const onlyNumericInputsNoFormatting = Array.from(
+      document.querySelectorAll(".js-numeric-input")
+    );
 
-  onlyNumericInputsNoFormatting.forEach((input) => {
-    input.addEventListener("input", () => {
-      const value = input.value;
-      const newCleanedValue = parseInt(value.replace(/[^\d]+/g, ""), 10);
-      if (isNaN(newCleanedValue)) {
-        input.value = "";
-      } else {
-        input.value = newCleanedValue;
-      }
+    onlyNumericInputsNoFormatting.forEach((input) => {
+      if (input.classList.contains("mask-initialized")) return;
+      input.addEventListener("input", () => {
+        const value = input.value;
+        const newCleanedValue = parseInt(value.replace(/[^\d]+/g, ""), 10);
+        if (isNaN(newCleanedValue)) {
+          input.value = "";
+        } else {
+          input.value = newCleanedValue;
+        }
+      });
+
+      input.classList.add("mask-initialized");
     });
-  });
 
-  const phoneInputs = Array.from(document.querySelectorAll(".js-phone-input"));
+    const phoneInputs = Array.from(
+      document.querySelectorAll(".js-phone-input")
+    );
 
-  phoneInputs.forEach((input) => {
-    const instance = new Inputmask({ mask: "+7 (999) 999-99-99" });
-    instance.mask(input);
-  });
+    phoneInputs.forEach((input) => {
+      if (input.classList.contains("mask-initialized")) return;
+      const instance = new Inputmask({ mask: "+7 (999) 999-99-99" });
+      instance.mask(input);
+
+      input.classList.add("mask-initialized");
+    });
+  };
+
+  initializeMasks();
 
   const setWidth = () => {
     const scrollbarWidth =
@@ -105,8 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
     element.hasAttribute("data-show-element")
   );
 
-  
-
   allCheckboxes.forEach((box) => {
     const check = () => {
       elementToggles.forEach((toggle) => {
@@ -121,11 +131,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (toggle.checked) {
           console.log("Box checked");
 
-          element.classList.add('shown')
+          element.classList.add("shown");
         } else {
           console.log("Box not checked");
 
-          element.classList.remove('shown')
+          element.classList.remove("shown");
         }
       });
     };
@@ -153,5 +163,40 @@ document.addEventListener("DOMContentLoaded", () => {
     // });
 
     // check();
+  });
+
+  const copyInputBtns = Array.from(document.querySelectorAll(".js-copy-input"));
+
+  console.log("Copy inputs", copyInputBtns);
+
+  copyInputBtns.forEach((btn) => {
+    if (!btn.hasAttribute("data-copy")) return;
+
+    const fieldsToCopy = Array.from(document.querySelectorAll(btn.getAttribute("data-copy")));
+
+    if (!fieldsToCopy.length) {
+      console.error("No fields to copy");
+      return;
+    }
+
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      console.log("Copying field");
+
+      const fieldClones = fieldsToCopy.map(field => {
+        const fieldClone = field.cloneNode(true);
+        fieldClone.value = "";
+        fieldClone.classList.remove("mask-initialized");
+        return fieldClone;
+      });
+
+      const allFields = document.querySelectorAll(btn.getAttribute("data-copy"));
+
+      console.log("field clones", fieldClones);
+      allFields[allFields.length - 1].after(...fieldClones);
+
+      initializeMasks();
+
+    });
   });
 });

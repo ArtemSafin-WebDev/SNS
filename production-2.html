@@ -397,12 +397,13 @@
                       </div>
                       <input
                         type="text"
-                        class="become-partner__text-input"
+                        class="become-partner__text-input js-address-field"
                         placeholder="Адрес"
                         value="Россия, 123112, г. Москва, Пресненская набережная, д. 6, стр. 2, 33 этаж"
+                        name="address[]" 
                       />
                     </div>
-                    <a href="#" class="become-partner__add-next">
+                    <a href="#" class="become-partner__add-next js-copy-input" data-copy=".js-address-field">
                       Добавить адрес следующей ТТ<svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 13 13"
@@ -420,24 +421,24 @@
                       </div>
                       <input
                         type="text"
-                        class="become-partner__text-input"
+                        class="become-partner__text-input js-person-field"
                         placeholder="ФИО"
-                        value=""
+                        value="" name="person-name[]"
                       />
                       <input
                         type="text"
-                        class="become-partner__text-input"
+                        class="become-partner__text-input js-person-field"
                         placeholder="Должность"
-                        value=""
+                        value="" name="person-role[]"
                       />
                       <input
                         type="text"
-                        class="become-partner__text-input js-phone-input"
+                        class="become-partner__text-input js-phone-input js-person-field"
                         placeholder="Контактный телефон"
-                        value=""
+                        value="" name="person-phone[]"
                       />
                     </div>
-                    <a href="#" class="become-partner__add-next">
+                    <a href="#" class="become-partner__add-next js-copy-input" data-copy=".js-person-field">
                       Добавить еще одно уполномоченное лицо<svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 13 13"
@@ -455,24 +456,24 @@
                       </div>
                       <input
                         type="text"
-                        class="become-partner__text-input"
+                        class="become-partner__text-input js-trusted-person"
                         placeholder="ФИО"
-                        value=""
+                        value="" name="trusted-name[]"
                       />
                       <input
                         type="text"
-                        class="become-partner__text-input"
+                        class="become-partner__text-input js-trusted-person"
                         placeholder="Должность"
-                        value=""
+                        value="" name="trusted-role[]"
                       />
                       <input
                         type="text"
-                        class="become-partner__text-input js-phone-input"
+                        class="become-partner__text-input js-phone-input js-trusted-person"
                         placeholder="Контактный телефон"
-                        value=""
+                        value="" name="trusted-phone[]"
                       />
                     </div>
-                    <a href="#" class="become-partner__add-next">
+                    <a href="#" class="become-partner__add-next js-copy-input" data-copy=".js-trusted-person">
                       Добавить еще одно уполномоченное лицо<svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 13 13"
